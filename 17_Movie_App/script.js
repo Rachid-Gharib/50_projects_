@@ -16,14 +16,14 @@ function getClassByRate(rate) {
 function showMovies(movies) {
      main.innerHTML = '';
      movies.forEach((movie) => {
-          const { title, posterPath, voteAverage, overview } = movie;
+          const { title, poster_path, vote_average, overview } = movie;
           const movieElem = document.createElement('div');
-          movieElem.classList.add('movie', 'flexBox');
+          movieElem.classList.add('movie');
           movieElem.innerHTML = `
-                       <img src="${IMG_PATH + posterPath}" alt="Poster wallpaper">
+                       <img src="${IMG_PATH + poster_path}" alt="Poster wallpaper">
                        <div class="movie-info">
                             <h3>${title}</h3>
-                            <span class="${getClassByRate(voteAverage)}">${voteAverage}</span>
+                            <span class="${getClassByRate(vote_average)}">${vote_average}</span>
                        </div>
                        <div class="overview">
                             <h3>Overview</h3>
